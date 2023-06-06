@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Website</title>
+    </head>
+    <body>
+        <h1>My Website</h1>
+        <form id="addFriendForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+            <br/>
+            <br/>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+            <br/>
+            <br/>
+            <button type="submit">Add Friend</button>
+        </form>
+
+        <h2>Friends</h2>
+        <div id="friendList">
+
+        </div>
+
+        <script>
+            let addFriendForm = document.getElementById('addFriendForm');
+            let friendList = document.getElementById('friendList');
+
+            let friends = [];
+
+            addFriendForm.addEventListener('submit', () => {
+                event.preventDefault();
+
+                let name = document.getElementById('name').value;
+                let email = document.getElementById('email').value;
+
+                let friend = {
+                    name: name,
+                    email: email,
+                    edit: false
+                }
+
+                friends.push(friend);
+
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+
+                showFriends();
+            })
+
+            function showFriends() {
+                friendList.innerHTML = '';
+
+                for (let i = 0; i < friends.length; i++) {
+                    let friendData = friends[i];
+
+                    if (friendData.edit) {
+                        friendList.appendChild(getFriendEdit(friendData, i));
+                    } else {
+                        friendList.appendChild(getFriendShow(friendData, i));
+                    }
+                }
+            }
+
+            function getFriendShow(friendData, index) {
+                let friend = document.createElement('div');
+
+                let name = document.createElement('h3');
+                name.innerText = friendData.name;
+
+                let email = document.createElement('p');
+                email.innerText = friendData.email;
+
+                let edit = document.createElement('button');
+                edit.innerText = 'Edit';
+                edit.addEventListener('click', () => {
+                    friendData.edit = true;
+                    showFriends();
+                })
+
+                let remove = document.createElement('button');
+                remove.innerText = 'Remove';
+                remove.addEventListener('click', () => {
+                    friends.splice(index, 1);
+                    showFriends();
+                })
+
+                friend.appendChild(name);
+                friend.appendChild(email);
+                friend.appendChild(edit);
+                friend.appendChild(remove);
+
+                return friend;
+            }
+
+            function getFriendEdit(friendData, index) {
+                let friend = document.createElement('form');
+
+                let name = document.createElement('input');
+                name.type = 'text';
+                name.value = friendData.name;
+
+                let email = document.createElement('input');
+                email.type = 'email';
+                email.value = friendData.email;
+
+                let update = document.createElement('button');
+                update.innerText = 'Update';
+                update.addEventListener('click', () => {
+                    friendData.name = name.value;
+                    friendData.email = email.value;
+                    friendData.edit = false;
+                    showFriends();
+                })
+
+                let cancel = document.createElement('button');
+                cancel.innerText = 'Cancel';
+                cancel.addEventListener('click', () => {
+                    friendData.edit = false;
+                    showFriends();
+                })
+
+                friend.appendChild(name);
+                friend.appendChild(document.createElement('br'));
+                friend.appendChild(document.createElement('br'));
+                friend.appendChild(email);
+                friend.appendChild(document.createElement('br'));
+                friend.appendChild(document.createElement('br'));
+                friend.appendChild(update);
+                friend.appendChild(cancel);
+
+                return friend;
+            }
+        </script>
+    </body>
+</html>

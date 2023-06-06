@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Website</title>
+        <style lang="css">
+
+            div {
+                float: left;
+                margin: 20px;
+                padding: 20px;
+                background-color: lightgreen;
+                border: 5px solid;
+            }
+
+            div div {
+                background-color: lightcyan;
+            }
+
+            div div div {
+                background-color: lightsalmon;
+            }
+
+            div div div div {
+                background-color: lightyellow;
+            }
+
+            .highlight {
+                border: 5px solid pink;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My Website</h1>
+        <div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let divs = document.getElementsByTagName('div')
+
+            for (let div of divs) {
+                div.addEventListener('mousedown', function() {
+                    div.classList.add('highlight');
+                });
+
+                div.addEventListener('mouseup', function() {
+                    div.classList.remove('highlight');
+                });
+            }
+        </script>
+    </body>
+</html>

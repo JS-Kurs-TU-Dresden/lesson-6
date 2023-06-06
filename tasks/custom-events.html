@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Website</title>
+        <style lang="css">
+            button {
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My Website</h1>
+        <button id="add">Increase</button>
+        <button id="sub">Decrease</button>
+
+        <h2>Amounts Clicked</h2>
+        <div id="show">
+            0
+        </div>
+
+        <script>
+            let add = document.getElementById('add');
+            let sub = document.getElementById('sub');
+
+            add.addEventListener('click', function() {
+                let event = new Event('increase');
+                document.dispatchEvent(event);
+            });
+
+            sub.addEventListener('click', function() {
+                let event = new Event('decrease');
+                document.dispatchEvent(event);
+            });
+            
+            document.addEventListener('increase', function() {
+                let show = document.getElementById('show');
+                let amount = parseInt(show.innerText);
+                amount++;
+                show.innerText = amount;
+            });
+
+            document.addEventListener('decrease', function() {
+                let show = document.getElementById('show');
+                let amount = parseInt(show.innerText);
+                amount--;
+                show.innerText = amount;
+            });
+        </script>
+    </body>
+</html>

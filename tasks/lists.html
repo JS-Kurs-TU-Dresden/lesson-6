@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Website</title>
+    </head>
+    <body>
+        <h1>My Website</h1>
+        
+        <ul id="list1"></ul>
+
+        <ol id="list2"></ol>
+
+        <script>
+            const firstList = ["Dog", "Cat", "Bird", "Fish", "Lizard"]
+            const secondList = ["Apple", "Banana", "Orange", "Pear", "Grape"];
+
+            for(let i = 0; i < firstList.length; i++) {
+                let list1 = document.getElementById('list1');
+                let li = document.createElement('li');
+                li.innerText = firstList[i];
+                list1.appendChild(li);
+            }
+
+            for(let i = 0; i < secondList.length; i++) {
+                let list2 = document.getElementById('list2');
+                let li = document.createElement('li');
+                li.innerText = secondList[i];
+                list2.appendChild(li);
+            }
+        </script>
+    </body>
+</html>

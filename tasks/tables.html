@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Website</title>
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+
+            table th {
+                padding: 10px;
+                border-bottom: 2px solid black;
+            }
+
+            table td {
+                padding: 10px;
+            }
+
+            table td:nth-child(2), table td:nth-child(3), table td:nth-child(4) {
+                text-align: right;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My Website</h1>
+        
+        <table id="table">
+
+        </table>
+
+        <script>
+            let table = document.getElementById('table');
+
+            const solarSystem = [
+                {
+                    planet: "Mercury",
+                    moons: 0,
+                    diameter: 3031,
+                    distance: 57.9
+                },
+                {
+                    planet: "Venus",
+                    moons: 0,
+                    diameter: 7521,
+                    distance: 108.2
+                },
+                {
+                    planet: "Earth",
+                    moons: 1,
+                    diameter: 7926,
+                    distance: 149.6
+                },
+                {
+                    planet: "Mars",
+                    moons: 2,
+                    diameter: 4222,
+                    distance: 227.9
+                },
+                {
+                    planet: "Jupiter",
+                    moons: 79,
+                    diameter: 88846,
+                    distance: 778.6
+                },
+                {
+                    planet: "Saturn",
+                    moons: 82,
+                    diameter: 74898,
+                    distance: 1433.5
+                },
+                {
+                    planet: "Uranus",
+                    moons: 27,
+                    diameter: 31763,
+                    distance: 2872.5
+                },
+                {
+                    planet: "Neptune",
+                    moons: 14,
+                    diameter: 30775,
+                    distance: 4495.1
+                }
+            ];
+
+            let tr = document.createElement('tr');
+
+            let th1 = document.createElement('th');
+            th1.innerText = "Planet";
+            tr.appendChild(th1);
+
+            let th2 = document.createElement('th');
+            th2.innerText = "Moons";
+            tr.appendChild(th2);
+
+            let th3 = document.createElement('th');
+            th3.innerText = "Diameter";
+            tr.appendChild(th3);
+
+            let th4 = document.createElement('th');
+            th4.innerText = "Distance";
+            tr.appendChild(th4);
+
+            table.appendChild(tr);
+                
+            for(let planet of solarSystem) {
+                let tr = document.createElement('tr');
+
+                let td1 = document.createElement('td');
+                td1.innerText = planet.planet;
+                tr.appendChild(td1);
+
+                let td2 = document.createElement('td');
+                td2.innerText = planet.moons;
+                tr.appendChild(td2);
+
+                let td3 = document.createElement('td');
+                td3.innerText = planet.diameter;
+                tr.appendChild(td3);
+
+                let td4 = document.createElement('td');
+                td4.innerText = planet.distance;
+                tr.appendChild(td4);
+
+                table.appendChild(tr);
+            }
+
+        </script>
+    </body>
+</html>

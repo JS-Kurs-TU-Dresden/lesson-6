@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Website</title>
+        <style lang="css">
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: lightgray;
+                margin: 10px;
+                text-align: center;
+                line-height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My Website</h1>
+        <!-- Make me blue on click -->
+        <div id="box1" class="box">Click me!</div>
+
+        <!-- Make me twice as wide on hover and reset the width when not hovering -->
+        <div id="box2" class="box">Hover me!</div>
+
+        <!-- Make me green as long as any key is pressed -->
+        <div id="box3" class="box">Any Press</div>
+
+        <!-- Make me yellow as long as the key "D" is pressed -->
+        <div id="box4" class="box">D Press</div>
+
+        <script>
+            let box1 = document.getElementById('box1');
+            let box2 = document.getElementById('box2');
+            let box3 = document.getElementById('box3');
+            let box4 = document.getElementById('box4');
+
+            box1.addEventListener('click', function() {
+                box1.style.backgroundColor = 'blue';
+            });
+
+            box2.addEventListener('mouseover', function() {
+                box2.style.width = '200px';
+            });
+
+            box2.addEventListener('mouseout', function() {
+                box2.style.width = '100px';
+            });
+
+            document.addEventListener('keydown', function() {
+                box3.style.backgroundColor = 'green';
+            });
+
+            document.addEventListener('keyup', function() {
+                box3.style.backgroundColor = 'lightgray';
+            });
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'd') {
+                    box4.style.backgroundColor = 'yellow';
+                }
+            });
+
+            document.addEventListener('keyup', function(event) {
+                if (event.key === 'd') {
+                    box4.style.backgroundColor = 'lightgray';
+                }
+            });
+        </script>
+    </body>
+</html>
