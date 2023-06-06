@@ -43,17 +43,14 @@
         </div>
 
         <script>
-            let divs = document.getElementsByTagName('div')
+            // For more info: https://javascript.info/bubbling-and-capturing
+            
+            // Write your code so that when a div (or its children) is clicked, it is highlighted
+            // and when the mouse is released, it is unhighlighted
+            // In order to highlight a div, add the class 'highlight' to it
 
-            for (let div of divs) {
-                div.addEventListener('mousedown', function() {
-                    div.classList.add('highlight');
-                });
+            
 
-                div.addEventListener('mouseup', function() {
-                    div.classList.remove('highlight');
-                });
-            }
         </script>
     </body>
 </html>

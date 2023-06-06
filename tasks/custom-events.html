@@ -19,29 +19,33 @@
         </div>
 
         <script>
-            let add = document.getElementById('add');
-            let sub = document.getElementById('sub');
+            // For more info: https://javascript.info/dispatch-events
+            // Replace ___ with your code
+
+            let add = ___;
+            let sub = ___;
 
             add.addEventListener('click', function() {
-                let event = new Event('increase');
-                document.dispatchEvent(event);
+                let event = ___
+                document.___(event);
             });
 
             sub.addEventListener('click', function() {
-                let event = new Event('decrease');
-                document.dispatchEvent(event);
+                let event = ___
+                document.___(event);
             });
             
+            // The following listeners should be triggered by the buttons
             document.addEventListener('increase', function() {
                 let show = document.getElementById('show');
-                let amount = parseInt(show.innerText);
+                let amount = ___;
                 amount++;
                 show.innerText = amount;
             });
 
             document.addEventListener('decrease', function() {
                 let show = document.getElementById('show');
-                let amount = parseInt(show.innerText);
+                let amount = ___;
                 amount--;
                 show.innerText = amount;
             });

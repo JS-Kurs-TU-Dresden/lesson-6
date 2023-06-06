@@ -28,42 +28,9 @@
         <div id="box4" class="box">D Press</div>
 
         <script>
-            let box1 = document.getElementById('box1');
-            let box2 = document.getElementById('box2');
-            let box3 = document.getElementById('box3');
-            let box4 = document.getElementById('box4');
+            // For more info: https://javascript.info/introduction-browser-events
 
-            box1.addEventListener('click', function() {
-                box1.style.backgroundColor = 'blue';
-            });
-
-            box2.addEventListener('mouseover', function() {
-                box2.style.width = '200px';
-            });
-
-            box2.addEventListener('mouseout', function() {
-                box2.style.width = '100px';
-            });
-
-            document.addEventListener('keydown', function() {
-                box3.style.backgroundColor = 'green';
-            });
-
-            document.addEventListener('keyup', function() {
-                box3.style.backgroundColor = 'lightgray';
-            });
-
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'd') {
-                    box4.style.backgroundColor = 'yellow';
-                }
-            });
-
-            document.addEventListener('keyup', function(event) {
-                if (event.key === 'd') {
-                    box4.style.backgroundColor = 'lightgray';
-                }
-            });
+            // Implement the correct event listeners for the boxes, so that they behave as described above
         </script>
     </body>
 </html>

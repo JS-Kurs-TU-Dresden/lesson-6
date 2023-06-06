@@ -29,8 +29,6 @@
         </table>
 
         <script>
-            let table = document.getElementById('table');
-
             const solarSystem = [
                 {
                     planet: "Mercury",
@@ -82,47 +80,24 @@
                 }
             ];
 
-            let tr = document.createElement('tr');
+            // For more info: https://www.w3schools.com/html/html_tables.asp
 
-            let th1 = document.createElement('th');
-            th1.innerText = "Planet";
-            tr.appendChild(th1);
+            let table = document.getElementById('table');
 
-            let th2 = document.createElement('th');
-            th2.innerText = "Moons";
-            tr.appendChild(th2);
+            // Generate the correct elements for the table and fill it with the data from solarSystem
+            // The table should look like this:
 
-            let th3 = document.createElement('th');
-            th3.innerText = "Diameter";
-            tr.appendChild(th3);
+            // Planet  Moons  Diameter  Distance
+            // Mercury 0      3031      57.9
+            // Venus   0      7521      108.2
+            // Earth   1      7926      149.6
+            // Mars    2      4222      227.9
+            // Jupiter 79     88846     778.6
+            // Saturn  82     74898     1433.5
+            // Uranus  27     31763     2872.5
+            // Neptune 14     30775     4495.1
 
-            let th4 = document.createElement('th');
-            th4.innerText = "Distance";
-            tr.appendChild(th4);
-
-            table.appendChild(tr);
-                
-            for(let planet of solarSystem) {
-                let tr = document.createElement('tr');
-
-                let td1 = document.createElement('td');
-                td1.innerText = planet.planet;
-                tr.appendChild(td1);
-
-                let td2 = document.createElement('td');
-                td2.innerText = planet.moons;
-                tr.appendChild(td2);
-
-                let td3 = document.createElement('td');
-                td3.innerText = planet.diameter;
-                tr.appendChild(td3);
-
-                let td4 = document.createElement('td');
-                td4.innerText = planet.distance;
-                tr.appendChild(td4);
-
-                table.appendChild(tr);
-            }
+            
 
         </script>
     </body>

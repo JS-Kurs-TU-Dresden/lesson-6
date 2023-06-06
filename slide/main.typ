@@ -304,10 +304,11 @@ form.onsubmit = (event) => {
 == Tasks and Points
 Goal is to get 100 Points.
 #columns(2, [
-- `adding-removing` (35 Points)
-- `basic-events` (35 Points)
-- `hello-browser` (20 Points)
-- `manipulating-dom` (35 Points)
-- `searching-elements` (35 Points)
-- `to-do-list` (65 Points)
+- `custom-events` (20 Points)
+- `lists` (30 Points)
+- `form` (30 Points)
+- `tables` (40 Points)
+- `more-events` (40 Points)
+- `event-bubbling` (40 Points)
+- `friend-list` (80 Points)
 ])

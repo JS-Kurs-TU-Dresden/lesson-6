@@ -30,30 +30,33 @@
         <div id="infoMessage"></div>
 
         <script>
+            // For more info: https://javascript.info/form-elements 
+            //                https://javascript.info/forms-submit
+
+            // Replace ___ with your code
+
+
             let form = document.getElementById('login');
             let infoMessage = document.getElementById('infoMessage');
 
-            form.addEventListener('submit', () => {
-                event.preventDefault();
+            form.addEventListener('___', () => {
+                // Prevent the default behaviour of the form
+                event.___();
 
-                let name = document.getElementById('name').value;
-                let email = document.getElementById('email').value;
-                let password = document.getElementById('password').value;
-                let confirm = document.getElementById('confirm').value;
+                let name = ___
+                let email = ___
+                let password = ___
+                let confirm = ___
 
-                if (name == '') {
-                    infoMessage.innerText = 'Name is required';
-                } else if (email == '') {
-                    infoMessage.innerText = 'Email is required';
-                } else if (password == '') {
-                    infoMessage.innerText = 'Password is required';
-                } else if (confirm == '') {
-                    infoMessage.innerText = 'Confirm Password is required';
-                } else if (password != confirm) {
-                    infoMessage.innerText = 'Password and Confirm Password must be same';
-                } else {
-                    infoMessage.innerText = 'Success';
-                }
+                // Now check if the fields are empty or not
+                // If name is empty, show the message "Name is required" in the infoMessage div
+                // If email is empty, show the message "Email is required" in the infoMessage div
+                // If password is empty, show the message "Password is required" in the infoMessage div
+                // If confirm is empty, show the message "Confirm Password is required" in the infoMessage div
+                // If password and confirm are not same, show the message "Password and Confirm Password must be same" in the infoMessage div
+                // If all the fields are filled, show the message "Success" in the infoMessage div
+
+                ___
             })
         </script>
     </body>

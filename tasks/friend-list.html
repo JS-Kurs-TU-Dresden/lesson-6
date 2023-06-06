@@ -26,114 +26,59 @@
             let addFriendForm = document.getElementById('addFriendForm');
             let friendList = document.getElementById('friendList');
 
+            // This array will store all the friends
+            // An example friend object:
+            // {
+            //     name: 'John Doe',
+            //     email: 'john.doe@example',
+            //     editMode: false
+            // }
             let friends = [];
 
             addFriendForm.addEventListener('submit', () => {
                 event.preventDefault();
 
-                let name = document.getElementById('name').value;
-                let email = document.getElementById('email').value;
-
-                if(!name || !email) {
-                    return;
-                }
-
-                let friend = {
-                    name: name,
-                    email: email,
-                    edit: false
-                }
-
-                friends.push(friend);
-
-                document.getElementById('name').value = '';
-                document.getElementById('email').value = '';
-
-                showFriends();
+                // Update the array with the new friend data
+                // Then call the showFriends function to show the updated list
             })
 
             function showFriends() {
                 friendList.innerHTML = '';
 
-                for (let i = 0; i < friends.length; i++) {
-                    let friendData = friends[i];
-
-                    if (friendData.edit) {
-                        friendList.appendChild(getFriendEdit(friendData, i));
-                    } else {
-                        friendList.appendChild(getFriendShow(friendData, i));
-                    }
-                }
+                // Go through each friend in the array and call either the getFriendShow or getFriendEdit function
             }
 
-            function getFriendShow(friendData, index) {
-                let friend = document.createElement('div');
 
-                let name = document.createElement('h3');
-                name.innerText = friendData.name;
-
-                let email = document.createElement('p');
-                email.innerText = friendData.email;
-
-                let edit = document.createElement('button');
-                edit.innerText = 'Edit';
-                edit.addEventListener('click', () => {
-                    friendData.edit = true;
-                    showFriends();
-                })
-
-                let remove = document.createElement('button');
-                remove.innerText = 'Remove';
-                remove.addEventListener('click', () => {
-                    friends.splice(index, 1);
-                    showFriends();
-                })
-
-                friend.appendChild(name);
-                friend.appendChild(email);
-                friend.appendChild(edit);
-                friend.appendChild(remove);
-
-                return friend;
+            // This function should generate the HTML (not as text) for the friend in show mode
+            // The HTML should look like this:
+            // <div>
+            //     <h3>Name</h3>
+            //     <p>Email</p>
+            //     <button>Edit</button>
+            //     <button>Remove</button>
+            // </div>
+            //
+            // Make sure that the buttons also work
+            function getFriendShow(friend, index) {
+                ___
             }
 
-            function getFriendEdit(friendData, index) {
-                let friend = document.createElement('form');
-
-                let name = document.createElement('input');
-                name.type = 'text';
-                name.value = friendData.name;
-
-                let email = document.createElement('input');
-                email.type = 'email';
-                email.value = friendData.email;
-
-                let update = document.createElement('button');
-                update.innerText = 'Update';
-                update.addEventListener('click', () => {
-                    friendData.name = name.value;
-                    friendData.email = email.value;
-                    friendData.edit = false;
-                    showFriends();
-                })
-
-                let cancel = document.createElement('button');
-                cancel.innerText = 'Cancel';
-                cancel.addEventListener('click', () => {
-                    friendData.edit = false;
-                    showFriends();
-                })
-
-                friend.appendChild(name);
-                friend.appendChild(document.createElement('br'));
-                friend.appendChild(document.createElement('br'));
-                friend.appendChild(email);
-                friend.appendChild(document.createElement('br'));
-                friend.appendChild(document.createElement('br'));
-                friend.appendChild(update);
-                friend.appendChild(cancel);
-
-                return friend;
+            // This function should generate the HTML (not as text) for the friend in edit mode
+            // The HTML should look like this:
+            // <form>
+            //     <input type="text" value="Name">
+            //     <br/>
+            //     <br/>
+            //     <input type="email" value="Email">
+            //     <br/>
+            //     <br/>
+            //     <button>Update</button>
+            //     <button>Cancel</button>
+            // </form>
+            //
+            // Make sure that the buttons also work
+            function getFriendEdit(friend, index) {
+                ___
             }
         </script>
     </body>
