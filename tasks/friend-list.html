@@ -4,7 +4,7 @@
         <title>My Website</title>
     </head>
     <body>
-        <h1>My Website</h1>
+        <h1>My Friendlist</h1>
         <form id="addFriendForm">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your name">
@@ -33,6 +33,10 @@
 
                 let name = document.getElementById('name').value;
                 let email = document.getElementById('email').value;
+
+                if(!name || !email) {
+                    return;
+                }
 
                 let friend = {
                     name: name,
